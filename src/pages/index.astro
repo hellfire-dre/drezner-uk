@@ -1,4 +1,5 @@
 ---
+---
 const domain = "drezner.uk";
 
 const links = [
@@ -13,6 +14,28 @@ const links = [
     icon: "lock"
   }
 ];
+
+function getIcon(type) {
+  if (type === "plex") {
+    return `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <polygon points="8,5 16,12 8,19"></polygon>
+      </svg>
+    `;
+  }
+
+  if (type === "lock") {
+    return `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="5" y="11" width="14" height="10" rx="2"></rect>
+        <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+      </svg>
+    `;
+  }
+
+  return "";
+}
+
 ---
 
 <!DOCTYPE html>
@@ -153,26 +176,3 @@ const links = [
     </div>
   </body>
 </html>
-
-<script>
-  function getIcon(type) {
-    if (type === "plex") {
-      return `
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <polygon points="8,5 16,12 8,19"></polygon>
-        </svg>
-      `;
-    }
-
-    if (type === "lock") {
-      return `
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="5" y="11" width="14" height="10" rx="2"></rect>
-          <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
-        </svg>
-      `;
-    }
-
-    return "";
-  }
-</script>
